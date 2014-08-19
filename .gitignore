@@ -1,0 +1,20 @@
+###### Unity files
+
+Library/
+Temp/
+Temp.meta
+obj/
+Builds/
+Bundles/
+Bundles.meta
+.DS_Store
+UpgradeLog.htm
+UpgradeLog.XML
+_UpgradeReport_Files/
+*.suo
+*.csproj
+*.unityproj
+*.sln
+*.userprefs
+*.pidb
+*.swp
