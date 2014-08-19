@@ -9,7 +9,7 @@ public class CommandEvaluator : MonoX
 	[SerializeField] private ParameterSymbols[] parameters;
 	[SerializeField] private ExecutionSymbols[] executions;
 
-	public Action<Command> onCommandSent;
+	public Action<Command> onCommandFound;
 
 	public void Evaluate(string userInput) {
 		string[] sections = userInput.Split(' ');
@@ -26,8 +26,8 @@ public class CommandEvaluator : MonoX
 			if (exec.symbol == sections[0]) execution = exec.execution;
 		}
 		if (category != null && parameter != null && execution != null) {
-			var command = new Command(category.Value, parameter.Value, execution.Value);
-			if (onCommandSent != null) onCommandFound(command);
+			var command = new Command(category.Value, execution.Value, parameter.Value);
+			if (onCommandFound != null) onCommandFound(command);
 		}
 	}
 
