@@ -14,8 +14,8 @@ public class KeyboardInput : MonoX
 			if (Input.inputString == "\b") {
 				inputLbl.text = inputLbl.text.Substring(0, inputLbl.text.Length - 1);
 			} if (Input.inputString == "\n" || Input.inputString == "\r") {
-				inputLbl.text = string.Empty;
 				if (onCommandEntered != null) onCommandEntered(inputLbl.text);
+				inputLbl.text = string.Empty;
 			} else {
 				inputLbl.text += Input.inputString;
 			}

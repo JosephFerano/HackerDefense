@@ -3,10 +3,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class CommandProcessor : MonoX
+public enum Execution
 {
-	
-	public void Process(Command command) {
-	}
-
+	Firewall,
+	Trojan,
+	VirusProtection,
+	Virus
 }

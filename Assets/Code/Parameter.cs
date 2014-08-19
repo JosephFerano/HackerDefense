@@ -3,10 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class CommandProcessor : MonoX
+public enum Parameter
 {
-	
-	public void Process(Command command) {
-	}
-
+	Top,
+	Middle,
+	Bottom
 }

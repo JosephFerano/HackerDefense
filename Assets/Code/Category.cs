@@ -3,10 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class CommandProcessor : MonoX
+public enum Category
 {
-	
-	public void Process(Command command) {
-	}
-
+	Attack,
+	Defense,
+	Upgrade
 }
