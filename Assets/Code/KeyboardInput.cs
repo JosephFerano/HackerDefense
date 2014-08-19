@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class KeyboardInput : MonoBehaviour
+public class KeyboardInput : MonoX
 {
 	[SerializeField] private UILabel inputLbl;
 
@@ -12,11 +12,12 @@ public class KeyboardInput : MonoBehaviour
 	void Update() {
 		if (!string.IsNullOrEmpty(Input.inputString)) {
 			if (Input.inputString == "\b") {
-				inputLbl.text = inputLbl.text.Substring(0, inputLbl.text.Length - 1); 
+				inputLbl.text = inputLbl.text.Substring(0, inputLbl.text.Length - 1);
 			} if (Input.inputString == "\n" || Input.inputString == "\r") {
 				inputLbl.text = string.Empty;
+				if (onCommandEntered != null) onCommandEntered(inputLbl.text);
 			} else {
-				inputLbl.text += Input.inputString; 
+				inputLbl.text += Input.inputString;
 			}
 		}
 	}
@@ -24,7 +25,7 @@ public class KeyboardInput : MonoBehaviour
 	// void OnGUI() {
 	// 	if (Event.current.isKey && Event.current.type == EventType.KeyUp) {
 	// 		Debug.Log(Input.inputString);
-	// 		inputLbl.text += Event.current.keyCode.ToString(); 
+	// 		inputLbl.text += Event.current.keyCode.ToString()
 	// 	}
 	// }
 

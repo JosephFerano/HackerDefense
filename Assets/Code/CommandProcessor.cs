@@ -5,7 +5,30 @@ using System.Collections.Generic;
 
 public class CommandProcessor : MonoX
 {
-	[SerializeField] private string[] commands;
-	[SerializeField] private string[] options;
-	[SerializeField] private string[] actions;
+	
+	public void Process() {
+	}
+
+}
+
+public enum Category
+{
+	Attack,
+	Defense,
+	Upgrade
+}
+
+public enum Parameter
+{
+	Top,
+	Middle,
+	Bottom
+}
+
+public enum Execution
+{
+	Firewall,
+	Trojan,
+	VirusProtection,
+	Virus
 }
