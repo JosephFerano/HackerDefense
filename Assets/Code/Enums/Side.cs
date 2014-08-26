@@ -3,10 +3,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum Execution
+public enum Side
 {
-	Firewall,
-	Trojan,
-	VirusProtection,
-	Virus
+	Left,
+	Right
 }

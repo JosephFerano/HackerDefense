@@ -3,9 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum Command
+public enum Lane
 {
-	Attack,
-	Defense,
-	Upgrade
+	Top,
+	Middle,
+	Bottom
 }

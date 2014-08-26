@@ -3,9 +3,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum Parameter
+public class Unit : MonoX
 {
-	Top,
-	Middle,
-	Bottom
 }

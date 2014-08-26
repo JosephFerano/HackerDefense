@@ -5,48 +5,67 @@ using System.Collections.Generic;
 
 public class CommandEvaluator : MonoX
 {
-	[SerializeField] private CategorySymbols[] categories;
-	[SerializeField] private ParameterSymbols[] parameters;
-	[SerializeField] private ExecutionSymbols[] executions;
+	[SerializeField] private CommandSymbols[] commandSymbols;
+	[SerializeField] private ArgumentSymbols[] argumentSymbols;
+	[SerializeField] private FlagSymbols[] flagSymbols;
 
-	public Action<Command> onCommandFound;
+	public Action<CommandGroup> CommandInvoked;
 
 	public void Evaluate(string userInput) {
-		string[] sections = userInput.Split(' ');
-		Category? category = null;
-		Parameter? parameter = null;
-		Execution? execution = null;
-		foreach (var cat in categories) {
-			if (cat.symbol == sections[0]) category = cat.category;
+		List<string> sections = new List<string>();
+		sections.AddRange(userInput.Split(' '));
+		Command? command = null;
+		Argument? argument = null;
+		List<Flag> flags = new List<Flag>();
+		int amountFlag = 0;
+		foreach (var cmd in commandSymbols) {
+			if (cmd.symbol == sections[0]) command = cmd.command;
 		}
-		foreach (var param in parameters) {
-			if (param.symbol == sections[0]) parameter = param.parameter;
+		foreach (var arg in argumentSymbols) {
+			bool didGetArg = false;
+			for (int i = 1; i < sections.Count; i++) {
+				if (arg.symbol == sections[i]) {
+					argument = arg.argument;
+					didGetArg = true;
+					break;
+				}
+			}
+			if (didGetArg) break;
 		}
-		foreach (var exec in executions) {
-			if (exec.symbol == sections[0]) execution = exec.execution;
+		foreach (var fl in flagSymbols) {
+			for (int i = 0; i < sections.Count; i++) {
+				if (fl.symbol == sections[i]) {
+					flags.Add(fl.flag);
+				}
+			}
 		}
-		if (category != null && parameter != null && execution != null) {
-			var command = new Command(category.Value, execution.Value, parameter.Value);
-			if (onCommandFound != null) onCommandFound(command);
+		foreach (var section in sections) {
+			if (int.TryParse(section, out amountFlag)) break;
+		}
+		Debug.Log(command);
+		Debug.Log(argument);
+		if (command != null && argument != null) {
+			var commandGroup = new CommandGroup(command.Value, argument.Value, flags.ToArray(), amountFlag);
+			if (CommandInvoked != null) CommandInvoked(commandGroup);
 		}
 	}
 
 	[Serializable]
-	public class CategorySymbols {
+	public class CommandSymbols{
 		public string symbol;
-		public Category category;
+		public Command command;
 	}
 
 	[Serializable]
-	public class ParameterSymbols {
+	public class ArgumentSymbols {
 		public string symbol;
-		public Parameter parameter;
+		public Argument argument;
 	}
 
 	[Serializable]
-	public class ExecutionSymbols {
+	public class FlagSymbols {
 		public string symbol;
-		public Execution execution;
+		public Flag flag;
 	}
 
 }

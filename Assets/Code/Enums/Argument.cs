@@ -3,9 +3,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum Command
+public enum Argument
 {
-	Attack,
-	Defense,
-	Upgrade
+	Firewall,
+	Trojan,
+	VirusProtection,
+	Virus
 }

@@ -10,8 +10,16 @@ public class HackerBattle : MonoX
 	[SerializeField] private CommandProcessor processor;
 
 	void Awake() {
-		keyboardInput.onCommandEntered += ui => evaluator.Evaluate(ui);
-		evaluator.onCommandFound += c => processor.Process(c);
+		keyboardInput.CommandEntered += OnCommandEntered;
+		evaluator.CommandInvoked += OnCommandInvoked;
+	}
+
+	void OnCommandEntered(string input) {
+		evaluator.Evaluate(input);
+	}
+
+	void OnCommandInvoked(CommandGroup commandGroup) {
+		processor.Process(commandGroup);
 	}
 
 }

@@ -3,9 +3,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public enum Category
+public enum UnitType
 {
-	Attack,
-	Defense,
-	Upgrade
+	Virus,
+	Firewall
 }

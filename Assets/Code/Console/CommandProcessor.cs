@@ -5,8 +5,11 @@ using System.Collections.Generic;
 
 public class CommandProcessor : MonoX
 {
+	private CommandGroup commandGroup;
 	
-	public void Process(Command command) {
+	public void Process(CommandGroup commandGroup) {
+		Debug.Log("WAT");
+		this.commandGroup = commandGroup;
 	}
 
 }
