@@ -7,7 +7,7 @@ public class Unit : MonoX
 {
 
 	public void Remove() {
-		Destroy(gameObject);
+		gameObject.SetActive(false);
 	}
 
 }
