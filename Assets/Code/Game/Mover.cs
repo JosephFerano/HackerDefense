@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Mover : MonoX
+public class Mover : MonoBehaviour
 {
 	[SerializeField] private float moveSpeed;
 	[SerializeField] private float moveInterval;

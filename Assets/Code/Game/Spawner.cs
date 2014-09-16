@@ -14,7 +14,8 @@ public class Spawner : MonoX
 
 	void Awake() {
 		unitToPool = new Dictionary<UnitType, ObjectPool>() {
-			{ UnitType.Virus , virusPool }
+			{ UnitType.Virus , virusPool },
+			{ UnitType.Firewall , firewallPool }
 		};
 	}
 
