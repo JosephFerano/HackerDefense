@@ -14,14 +14,6 @@ public class Defender : MonoX
 		}
 	}
 
-	void OnTriggerStay2D(Collider2D col) {
-		Debug.Log(col);
-		if (col.tag == "Virus") {
-			var unit = col.GetComponent<Unit>();
-			Block(unit);
-		}
-	}
-
 	void Block(Unit unit) {
 		unit.Remove();
 	}
