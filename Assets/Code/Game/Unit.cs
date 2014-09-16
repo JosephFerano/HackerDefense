@@ -5,4 +5,9 @@ using System.Collections.Generic;
 
 public class Unit : MonoX
 {
+
+	public void Remove() {
+		Destroy(gameObject);
+	}
+
 }

@@ -15,14 +15,14 @@ public class Mover : MonoX
 
 	public void Move(Vector2 direction) {
 		if (!isMoving) {
-			StartCoroutine(MoveUpdate(direction));
 			isMoving = true;
+			StartCoroutine(MoveUpdate(direction));
 		}
 	}
 
 	IEnumerator MoveUpdate(Vector2 direction) {
 		float timeElapsed = 0f;
-		if (direction == -Vector2.right) {
+		if (direction == Vector2.right) {
 			transform.localScale = new Vector2(-1, 1);
 		}
 		while (IsMoving) {
@@ -36,6 +36,11 @@ public class Mover : MonoX
 		}
 		if (StoppedMoving != null) StoppedMoving(this);
 		Destroy(gameObject);
+	}
+
+	[ContextMenu("ForceMove")]
+	void ForceMove() {
+		Move(-Vector2.right);
 	}
 
 }

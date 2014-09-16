@@ -13,7 +13,9 @@ public class Spawner : MonoX
 	private Dictionary<UnitType, ObjectPool> unitToPool;
 
 	void Awake() {
-		unitToPool = new Dictionary<UnitType, ObjectPool>();
+		unitToPool = new Dictionary<UnitType, ObjectPool>() {
+			{ UnitType.Virus , virusPool }
+		};
 	}
 
 	public Unit Spawn(UnitType unitType, Lane lane, Side side) {
