@@ -3,9 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Defender : MonoX
+public class Hurtbox : MonoX
 {
-
+	
 	void OnTriggerEnter2D(Collider2D col) {
 		if (col.gameObject.tag == "Player" || col.gameObject.tag == "Mainframe") {
 			if (col.gameObject.tag != tag) {

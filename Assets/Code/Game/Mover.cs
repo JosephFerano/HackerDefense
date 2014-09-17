@@ -13,6 +13,10 @@ public class Mover : MonoBehaviour
 
 	public bool IsMoving { get { return isMoving; } }
 
+	void OnEnable() {
+		isMoving = false;
+	}
+
 	public void Move(Vector2 direction) {
 		if (!isMoving) {
 			isMoving = true;
@@ -35,7 +39,6 @@ public class Mover : MonoBehaviour
 			yield return null;
 		}
 		if (StoppedMoving != null) StoppedMoving(this);
-		Destroy(gameObject);
 	}
 
 	[ContextMenu("ForceMove")]

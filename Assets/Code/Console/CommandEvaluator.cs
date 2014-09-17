@@ -9,7 +9,7 @@ public class CommandEvaluator : MonoX
 	[SerializeField] private ArgumentSymbols[] argumentSymbols;
 	[SerializeField] private FlagSymbols[] flagSymbols;
 
-	public Action<CommandGroup> CommandInvoked;
+	public Action<CommandGroup, Side> CommandInvoked;
 
 	public void Evaluate(string userInput) {
 		List<string> sections = new List<string>();
@@ -42,11 +42,9 @@ public class CommandEvaluator : MonoX
 		foreach (var section in sections) {
 			if (int.TryParse(section, out amountFlag)) break;
 		}
-		Debug.Log(command);
-		Debug.Log(argument);
 		if (command != null && argument != null) {
 			var commandGroup = new CommandGroup(command.Value, argument.Value, flags.ToArray(), amountFlag);
-			if (CommandInvoked != null) CommandInvoked(commandGroup);
+			if (CommandInvoked != null) CommandInvoked(commandGroup, Side.Left);
 		}
 	}
 

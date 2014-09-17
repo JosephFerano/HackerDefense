@@ -18,8 +18,8 @@ public class HackerBattle : MonoX
 		evaluator.Evaluate(input);
 	}
 
-	void OnCommandInvoked(CommandGroup commandGroup) {
-		processor.Process(commandGroup);
+	void OnCommandInvoked(CommandGroup commandGroup, Side side) {
+		processor.Process(commandGroup, side);
 	}
 
 }
