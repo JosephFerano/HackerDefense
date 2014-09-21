@@ -1,5 +1,7 @@
 using UnityEngine;
+using System;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Vitality : MonoX
 {
@@ -11,35 +13,11 @@ public class Vitality : MonoX
 	public event VitalityEvent Damaged;
 	public event VitalityEvent Depleted;
 
-	public bool IsDead {
-		get {
-			return currentAmount == 0;
-		}
-	}
-
-	public int CurrentAmount {
-		get {
-			return currentAmount;
-		}
-	}
-
-	public int MaxAmount {
-		get {
-			return maxAmount;
-		}
-	}
-
-	public float Percentage {
-		get {
-			return (float)currentAmount / (float)maxAmount;
-		}
-	}
-
-	public int PercentageInt {
-		get {
-			return Mathf.CeilToInt(((float)currentAmount / (float)maxAmount) * 100);
-		}
-	}
+	public bool IsDead { get { return currentAmount == 0; } }
+	public int CurrentAmount { get { return currentAmount; } }
+	public int MaxAmount { get { return maxAmount; } }
+	public float Percentage { get { return (float)currentAmount / (float)maxAmount; } }
+	public int PercentageInt { get { return Mathf.CeilToInt(((float)currentAmount / (float)maxAmount) * 100); } }
 
 	void Awake() {
 		currentAmount = maxAmount;
@@ -85,4 +63,5 @@ public class Vitality : MonoX
 			currentAmount = maxAmount;
 		}
 	}
+
 }
