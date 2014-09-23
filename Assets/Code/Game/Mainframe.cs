@@ -6,11 +6,13 @@ using System.Collections.Generic;
 public class Mainframe : MonoX
 {
 	[SerializeField] private float tickInterval;
-	[SerializeField] private Vitality health;
-	[SerializeField] private Vitality hackPower;
+	[SerializeField] private Hacker mainFrameHacker;
 	[SerializeField] private CommandProcessor processor;
 
 	private float timeElapsed;
+
+	void Awake() {
+	}
 
 	void Update() {
 		if (timeElapsed <= tickInterval) {

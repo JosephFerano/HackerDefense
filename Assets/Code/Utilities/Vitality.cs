@@ -3,10 +3,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public delegate void VitalityEvent(MonoX sender, Vitality receiver);
-
 public class Vitality
 {
+	public delegate void VitalityEvent(MonoX sender, Vitality receiver);
 	public event VitalityEvent Healed;
 	public event VitalityEvent Damaged;
 	public event VitalityEvent Depleted;

@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Defender : MonoX
+public class UnitCollisionChecker : MonoX
 {
 
 	void OnTriggerEnter2D(Collider2D col) {
