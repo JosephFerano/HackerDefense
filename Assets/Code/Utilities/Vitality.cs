@@ -3,23 +3,24 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-public class Vitality : MonoX
-{
-	[SerializeField] private int maxAmount;
-	[SerializeField] private int currentAmount;
+public delegate void VitalityEvent(MonoX sender, Vitality receiver);
 
-	public delegate void VitalityEvent(MonoX sender, Vitality receiver);
+public class Vitality
+{
 	public event VitalityEvent Healed;
 	public event VitalityEvent Damaged;
 	public event VitalityEvent Depleted;
+	private int maxAmount;
+	private int currentAmount;
 
 	public bool IsDead { get { return currentAmount == 0; } }
-	public int CurrentAmount { get { return currentAmount; } }
+	public int Amount { get { return currentAmount; } }
 	public int MaxAmount { get { return maxAmount; } }
 	public float Percentage { get { return (float)currentAmount / (float)maxAmount; } }
 	public int PercentageInt { get { return Mathf.CeilToInt(((float)currentAmount / (float)maxAmount) * 100); } }
 
-	void Awake() {
+	public Vitality(int maxAmount) {
+		this.maxAmount = maxAmount;
 		currentAmount = maxAmount;
 	}
 

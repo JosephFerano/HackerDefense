@@ -5,5 +5,4 @@ using System.Collections.Generic;
 
 public class MonoX : MonoBehaviour
 {
-
 }

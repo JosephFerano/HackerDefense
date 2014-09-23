@@ -6,6 +6,7 @@ using System.Linq;
 
 public static class Extensions
 {
+
 	public static Vector3 GetPointInBounds(this BoxCollider boxCollider) {
 		float x = Random.Range(boxCollider.bounds.min.x, boxCollider.bounds.max.x);
 		float y = Random.Range(boxCollider.bounds.min.y, boxCollider.bounds.max.y);
@@ -33,6 +34,14 @@ public static class Extensions
 			.OrderBy(item => (item.transform.position - transform.position).normalized)
 			.FirstOrDefault();
 		return closest;
+	}
+
+	public static Transform[] GetChildren(this Transform transform) {
+		var children = new Transform[transform.childCount];
+		for (int i = 0; i < children.Length; i++) {
+			children[i] = transform.GetChild(i);
+		}
+		return children;
 	}
 
 	public static string GetWithPrependedZeros(this int number, int placesToTheLeft) {

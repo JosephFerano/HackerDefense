@@ -181,7 +181,7 @@ Transform:
   m_GameObject: {fileID: 288178032}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00260416674, y: .00260416674, z: .00260416674}
+  m_LocalScale: {x: .00267022708, y: .00267022708, z: .00267022708}
   m_Children:
   - {fileID: 922925430}
   - {fileID: 1802254461}
@@ -699,7 +699,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1328334426}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -475, y: -465.614502, z: 0}
+  m_LocalPosition: {x: -461.999939, y: -456.114441, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1802254461}
@@ -1005,7 +1005,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1675361509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -450, y: -464.614502, z: 0}
+  m_LocalPosition: {x: -436.999939, y: -455.114441, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1802254461}
@@ -1040,13 +1040,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 3
-  mWidth: 943
+  mWidth: 917
   mHeight: 66
   mDepth: 2
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 14.287879
+  aspectRatio: 13.348485
   keepCrispWhenShrunk: 1
   mTrueTypeFont: {fileID: 12800000, guid: 73a03a3f90d88459785f61ce92b1bbd9, type: 3}
   mFont: {fileID: 0}
@@ -1095,7 +1095,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1778292350}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: -466.614502, z: 0}
+  m_LocalPosition: {x: -1, y: -457.114441, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1802254461}
@@ -1130,13 +1130,13 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 0, g: 1, b: 0, a: 1}
   mPivot: 4
-  mWidth: 1012
+  mWidth: 986
   mHeight: 52
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: 19.4615383
+  aspectRatio: 18.2692299
   mType: 1
   mFillDirection: 4
   mFillAmount: 1
@@ -1442,6 +1442,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tickInterval: 3
-  health: {fileID: 2127512722}
-  hackPower: {fileID: 2127512721}
   processor: {fileID: 1834180209}

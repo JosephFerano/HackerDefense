@@ -5,10 +5,10 @@ using System.Collections.Generic;
 
 public class ScreenLogger : MonoBehaviour
 {
-	private UILabel label;
+	// private UILabel label;
 
 	void Awake() {
-		label = GetComponent<UILabel>();
+		// label = GetComponent<UILabel>();
 	}
 
 	void OnEnable() {
@@ -21,7 +21,7 @@ public class ScreenLogger : MonoBehaviour
 
 	void PrintToLabel(string logString, string stackTrace, LogType logType) {
 		if (logString.Contains("Log:")) {
-			label.text = logString.Replace("Log:", "");
+			// label.text = logString.Replace("Log:", "");
 		}
 	}
 
